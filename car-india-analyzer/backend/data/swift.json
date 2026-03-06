@@ -1,0 +1,185 @@
+{
+  "id": "swift",
+  "brand": "Maruti Suzuki",
+  "model": "Swift",
+  "year": 2024,
+  "tagline": "India's Most Loved Hatchback",
+  "priceRange": { "min": 649000, "max": 902000 },
+  "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/159007/swift-exterior-right-front-three-quarter-2.jpeg",
+  "overview": "The Maruti Suzuki Swift is a premium hatchback that has dominated Indian roads since 2005. The 4th generation Swift (2024) features a new DualJet engine with improved fuel efficiency, a refreshed exterior, and enhanced safety features.",
+  "engine": {
+    "type": "1.2L DualJet Dual VVT",
+    "displacement": "1197cc",
+    "cylinders": 4,
+    "valves": 16,
+    "maxPower": "89.7 bhp @ 6000 rpm",
+    "maxTorque": "113 Nm @ 4400 rpm",
+    "fuelType": "Petrol",
+    "boreStroke": "73.0mm x 71.5mm",
+    "compressionRatio": "12.0:1",
+    "idleStartStop": true,
+    "emissionNorm": "BS6 Phase 2 RDE"
+  },
+  "transmission": {
+    "options": [
+      {
+        "type": "Manual",
+        "name": "5-Speed MT",
+        "gears": 5,
+        "mileage": "24.8 km/l"
+      },
+      {
+        "type": "Automatic",
+        "name": "5-Speed AMT",
+        "gears": 5,
+        "mileage": "25.75 km/l"
+      }
+    ]
+  },
+  "suspension": {
+    "front": {
+      "type": "MacPherson Strut",
+      "description": "Independent MacPherson Strut with coil spring and hydraulic shock absorber"
+    },
+    "rear": {
+      "type": "Torsion Beam",
+      "description": "Torsion beam axle with coil spring and hydraulic shock absorber"
+    }
+  },
+  "steering": {
+    "type": "Electric Power Steering (EPS)",
+    "mechanism": "Rack and Pinion",
+    "turningRadius": "4.8 m",
+    "steeringColumn": "Tilt Adjustable"
+  },
+  "brakes": {
+    "front": "Ventilated Disc",
+    "rear": "Drum (LXi/VXi) / Disc (ZXi/ZXi+)"
+  },
+  "dimensions": {
+    "length": 3845,
+    "width": 1735,
+    "height": 1530,
+    "wheelbase": 2450,
+    "groundClearance": 163,
+    "kerbWeight": { "min": 905, "max": 925 },
+    "bootSpace": 268,
+    "fuelTankCapacity": 37,
+    "tyreSize": "185/65 R15",
+    "wheels": "15-inch Alloy (ZXi/ZXi+) / Steel (LXi/VXi)"
+  },
+  "safety": {
+    "ncapRating": "Not Tested (2024)",
+    "airbags": {
+      "count": 6,
+      "details": "Driver + Passenger (all), Side + Curtain (ZXi+)"
+    },
+    "abs": true,
+    "ebd": true,
+    "esp": "ZXi and above",
+    "hillHoldControl": true,
+    "rearParkingSensors": true,
+    "rearCamera": "ZXi and above",
+    "seatbeltReminder": "All seats (ZXi+)",
+    "tyrePressureMonitor": "ZXi+ only",
+    "isofix": true
+  },
+  "variants": [
+    {
+      "name": "LXi",
+      "price": 649000,
+      "transmission": ["MT"],
+      "highlights": ["AC", "Power Windows", "Central Lock", "Fabric Seats"]
+    },
+    {
+      "name": "VXi",
+      "price": 724000,
+      "transmission": ["MT", "AMT"],
+      "highlights": ["SmartPlay Pro+", "7-inch Touchscreen", "Bluetooth", "USB"]
+    },
+    {
+      "name": "ZXi",
+      "price": 799000,
+      "transmission": ["MT", "AMT"],
+      "highlights": ["Alloy Wheels", "Rear Disc Brakes", "ESP", "Rear Camera", "Auto Headlamps"]
+    },
+    {
+      "name": "ZXi+",
+      "price": 902000,
+      "transmission": ["MT", "AMT"],
+      "highlights": ["Suzuki Connect", "360° Camera", "HUD", "6 Airbags", "TPMS", "Wireless Charging"]
+    }
+  ],
+  "features": {
+    "infotainment": {
+      "screen": "7-inch SmartPlay Pro+ (VXi+)",
+      "appleCarPlay": true,
+      "androidAuto": true,
+      "bluetooth": true,
+      "usb": true,
+      "voiceRecognition": false
+    },
+    "comfort": {
+      "ac": true,
+      "rearAC": false,
+      "keylessEntry": "ZXi+",
+      "pushButtonStart": "ZXi+",
+      "cruiseControl": false,
+      "wirelessCharging": "ZXi+",
+      "sunroof": false,
+      "ambientLighting": false
+    },
+    "exterior": {
+      "projectorHeadlamps": true,
+      "ledDRL": true,
+      "autoHeadlamps": "ZXi+",
+      "fogLamps": true,
+      "rearSpoiler": true
+    }
+  },
+  "competitors": ["Hyundai Grand i10 NIOS", "Tata Tiago", "Honda Amaze", "Ford Figo (discontinued)", "VW Polo (discontinued)"],
+  "salesData": {
+    "monthly": [
+      { "month": "Apr 2024", "units": 18423 },
+      { "month": "May 2024", "units": 20102 },
+      { "month": "Jun 2024", "units": 17856 },
+      { "month": "Jul 2024", "units": 21034 },
+      { "month": "Aug 2024", "units": 19782 },
+      { "month": "Sep 2024", "units": 22450 },
+      { "month": "Oct 2024", "units": 23891 },
+      { "month": "Nov 2024", "units": 21344 },
+      { "month": "Dec 2024", "units": 18967 },
+      { "month": "Jan 2025", "units": 19234 },
+      { "month": "Feb 2025", "units": 20567 },
+      { "month": "Mar 2025", "units": 24132 }
+    ],
+    "annual": [
+      { "year": "FY 2020-21", "units": 166882 },
+      { "year": "FY 2021-22", "units": 208012 },
+      { "year": "FY 2022-23", "units": 250678 },
+      { "year": "FY 2023-24", "units": 210342 },
+      { "year": "FY 2024-25", "units": 247782, "note": "Projected (Apr 24 - Mar 25)" }
+    ],
+    "marketShare": "~12% of total hatchback segment in India",
+    "ranking": "#1 in B-segment hatchback (2024)"
+  },
+  "colors": [
+    { "name": "Magma Grey", "hex": "#4A4A4A" },
+    { "name": "Speedy Blue", "hex": "#1B4F8A" },
+    { "name": "Pearl Arctic White", "hex": "#F5F5F0" },
+    { "name": "Solid Fire Red", "hex": "#C41E3A" },
+    { "name": "Celebes Green", "hex": "#3A7D44" },
+    { "name": "Midnight Black Pearl", "hex": "#1A1A1A" }
+  ],
+  "warranty": {
+    "standard": "2 years / Unlimited km",
+    "extended": "Up to 5 years available",
+    "battery": "N/A (ICE)"
+  },
+  "serviceInterval": "Every 10,000 km or 1 year",
+  "maintenanceCost": {
+    "firstService": 0,
+    "annualAvg": "₹6,000 - ₹10,000",
+    "majorService": "Every 40,000 km"
+  }
+}
