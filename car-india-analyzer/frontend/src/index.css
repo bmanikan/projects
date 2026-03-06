@@ -73,11 +73,47 @@
   }
 
   .prose-dark {
-    @apply prose prose-invert prose-sm max-w-none
-      prose-headings:text-zinc-100 prose-headings:font-semibold
-      prose-p:text-zinc-300 prose-p:leading-relaxed
-      prose-li:text-zinc-300
-      prose-strong:text-zinc-100
-      prose-code:text-brand-400 prose-code:bg-zinc-800 prose-code:px-1 prose-code:rounded;
+    @apply max-w-none text-sm;
+  }
+
+  .prose-dark h1,
+  .prose-dark h2,
+  .prose-dark h3,
+  .prose-dark h4 {
+    @apply text-zinc-100 font-semibold mt-4 mb-2;
+  }
+
+  .prose-dark p {
+    @apply text-zinc-300 leading-relaxed mb-3;
+  }
+
+  .prose-dark ul,
+  .prose-dark ol {
+    @apply pl-5 mb-3 space-y-1;
+  }
+
+  .prose-dark li {
+    @apply text-zinc-300;
+  }
+
+  .prose-dark ul > li {
+    @apply list-disc;
+  }
+
+  .prose-dark ol > li {
+    @apply list-decimal;
+  }
+
+  .prose-dark strong {
+    @apply text-zinc-100 font-semibold;
+  }
+
+  .prose-dark code {
+    color: #6b8fff;
+    @apply bg-zinc-800 px-1 rounded text-xs font-mono;
+  }
+
+  .prose-dark hr {
+    @apply border-zinc-800 my-4;
   }
 }

@@ -158,7 +158,7 @@ export default function AITab({ car }: { car: CarData }) {
                   }`}
                 >
                   {m.role === 'assistant' ? (
-                    <div className="prose-dark prose-xs">
+                    <div className="prose-dark">
                       <ReactMarkdown>{m.content}</ReactMarkdown>
                     </div>
                   ) : (
