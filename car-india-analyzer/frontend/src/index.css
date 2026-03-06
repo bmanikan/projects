@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-zinc-950 text-zinc-100 font-sans;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-600;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-zinc-900 border border-zinc-800 rounded-2xl;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-medium px-4 py-2 rounded-xl transition-colors;
+  }
+
+  .btn-ghost {
+    @apply text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 px-3 py-2 rounded-lg transition-colors;
+  }
+
+  .spec-row {
+    @apply flex justify-between items-center py-2.5 border-b border-zinc-800/50 last:border-0;
+  }
+
+  .tab-btn {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all;
+  }
+
+  .tab-btn-active {
+    @apply bg-zinc-800 text-zinc-100;
+  }
+
+  .tab-btn-inactive {
+    @apply text-zinc-500 hover:text-zinc-300 hover:bg-zinc-800/50;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-500 to-violet-500 bg-clip-text text-transparent;
+  }
+
+  .prose-dark {
+    @apply prose prose-invert prose-sm max-w-none
+      prose-headings:text-zinc-100 prose-headings:font-semibold
+      prose-p:text-zinc-300 prose-p:leading-relaxed
+      prose-li:text-zinc-300
+      prose-strong:text-zinc-100
+      prose-code:text-brand-400 prose-code:bg-zinc-800 prose-code:px-1 prose-code:rounded;
+  }
+}

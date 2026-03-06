@@ -1,0 +1,11 @@
+{
+  "name": "car-india-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "setup": "cp backend/.env.example backend/.env && echo 'Edit backend/.env and add your ANTHROPIC_API_KEY'"
+  }
+}
