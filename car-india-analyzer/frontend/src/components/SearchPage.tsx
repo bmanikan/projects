@@ -62,54 +62,63 @@ export default function SearchPage({ onSelect }: SearchPageProps) {
           />
         </div>
 
-        {/* Car Cards */}
-        <div className="w-full max-w-2xl">
+        {/* Car Grid */}
+        <div className="w-full max-w-4xl">
           {loading ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {[1, 2].map(i => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[1, 2, 3].map(i => (
                 <div key={i} className="card p-4 animate-pulse">
+                  <div className="h-36 bg-zinc-800 rounded-lg mb-3" />
                   <div className="h-4 bg-zinc-800 rounded w-3/4 mb-2" />
                   <div className="h-3 bg-zinc-800 rounded w-1/2" />
                 </div>
               ))}
             </div>
           ) : filtered.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {filtered.map(car => (
                 <button
                   key={car.id}
                   onClick={() => onSelect(car.id)}
                   className={clsx(
-                    'card p-4 text-left hover:border-brand-500/50 hover:bg-zinc-800/50 transition-all group cursor-pointer',
+                    'card p-0 text-left hover:border-brand-500/50 hover:bg-zinc-800/50 transition-all group cursor-pointer overflow-hidden',
                     'animate-fade-in'
                   )}
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <div className="text-xs text-zinc-500 mb-0.5">{car.brand}</div>
-                      <div className="font-semibold text-zinc-100 text-lg group-hover:text-brand-400 transition-colors">
-                        {car.model}
+                  <img
+                    src={car.image}
+                    alt={car.model}
+                    className="w-full h-36 object-cover bg-zinc-800"
+                    onError={e => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                  />
+                  <div className="p-4">
+                    <div className="flex justify-between items-start mb-1">
+                      <div>
+                        <div className="text-xs text-zinc-500 mb-0.5">{car.brand}</div>
+                        <div className="font-semibold text-zinc-100 text-base group-hover:text-brand-400 transition-colors">
+                          {car.model}
+                        </div>
                       </div>
+                      <span className="badge bg-zinc-800 text-zinc-400">{car.year}</span>
                     </div>
-                    <span className="badge bg-zinc-800 text-zinc-400">{car.year}</span>
-                  </div>
-                  <p className="text-xs text-zinc-500 mb-3 line-clamp-1">{car.tagline}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-medium text-brand-400">
-                      {formatPrice(car.priceRange.min)} – {formatPrice(car.priceRange.max)}
-                    </span>
-                    <span className="text-xs text-zinc-600 group-hover:text-zinc-400 transition-colors">
-                      Explore →
-                    </span>
+                    <p className="text-xs text-zinc-500 mb-3 line-clamp-1">{car.tagline}</p>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm font-medium text-brand-400">
+                        {formatPrice(car.priceRange.min)} – {formatPrice(car.priceRange.max)}
+                      </span>
+                      <span className="text-xs text-zinc-600 group-hover:text-zinc-400 transition-colors">
+                        Explore →
+                      </span>
+                    </div>
                   </div>
                 </button>
               ))}
             </div>
-          ) : query ? (
+          ) : (
             <div className="text-center py-8 text-zinc-500">
-              No cars found for "{query}"
+              {query ? `No cars found for "${query}"` : 'No cars available'}
             </div>
-          ) : null}
+          )}
         </div>
 
         {/* Feature Pills */}
