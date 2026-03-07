@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --watch src src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "vitest run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.36.3",
@@ -16,6 +17,7 @@
     "papaparse": "^5.4.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "vitest": "^4.0.18"
   }
 }

@@ -18,9 +18,13 @@ export default function SearchPage({ onSelect }: SearchPageProps) {
   const [cars, setCars] = useState<CarSummary[]>([]);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    api.getCars().then(setCars).finally(() => setLoading(false));
+    api.getCars()
+      .then(setCars)
+      .catch(e => setError(e instanceof Error ? e.message : 'Failed to load cars'))
+      .finally(() => setLoading(false));
   }, []);
 
   const filtered = cars.filter(
@@ -113,6 +117,11 @@ export default function SearchPage({ onSelect }: SearchPageProps) {
                   </div>
                 </button>
               ))}
+            </div>
+          ) : error ? (
+            <div className="text-center py-8">
+              <p className="text-red-400 mb-2">Failed to load cars</p>
+              <p className="text-zinc-500 text-sm">{error}</p>
             </div>
           ) : (
             <div className="text-center py-8 text-zinc-500">

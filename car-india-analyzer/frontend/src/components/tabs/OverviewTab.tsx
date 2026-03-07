@@ -1,5 +1,4 @@
 import { CarData, formatPrice } from '../../lib/api';
-import { CheckCircle, XCircle, Info } from 'lucide-react';
 
 export default function OverviewTab({ car }: { car: CarData }) {
   return (

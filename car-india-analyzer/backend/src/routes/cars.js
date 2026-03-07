@@ -1,14 +1,27 @@
 import { Router } from 'express';
 import { getCarList, getCarByModel } from '../services/seedService.js';
 import { scrapeAllSources } from '../services/scraperService.js';
-import { analyzeCarWithAI, compareVariants, generateSalesInsight } from '../services/claudeService.js';
 
 const router = Router();
 
+// Lazy-load Claude service to avoid crashing when ANTHROPIC_API_KEY is missing
+let claudeService = null;
+async function getClaude() {
+  if (!claudeService) {
+    claudeService = await import('../services/claudeService.js');
+  }
+  return claudeService;
+}
+
 // GET /api/cars - list all available cars
 router.get('/', (req, res) => {
-  const cars = getCarList();
-  res.json({ success: true, data: cars });
+  try {
+    const cars = getCarList();
+    res.json({ success: true, data: cars });
+  } catch (err) {
+    console.error('[cars] Failed to load car list:', err.message);
+    res.status(500).json({ success: false, error: 'Failed to load car list' });
+  }
 });
 
 // GET /api/cars/:model - full seed data for a car
@@ -41,6 +54,7 @@ router.get('/:model/ai-analysis', async (req, res) => {
   }
 
   try {
+    const { analyzeCarWithAI } = await getClaude();
     const analysis = await analyzeCarWithAI(car);
     res.json({ success: true, data: analysis });
   } catch (err) {
@@ -61,6 +75,7 @@ router.post('/:model/ask', async (req, res) => {
   }
 
   try {
+    const { analyzeCarWithAI } = await getClaude();
     const result = await analyzeCarWithAI(car, question);
     res.json({ success: true, data: result });
   } catch (err) {
@@ -78,6 +93,7 @@ router.get('/:model/variants', async (req, res) => {
   }
 
   try {
+    const { compareVariants } = await getClaude();
     const result = await compareVariants(car);
     res.json({ success: true, data: result });
   } catch (err) {
@@ -95,6 +111,7 @@ router.get('/:model/sales-insight', async (req, res) => {
   }
 
   try {
+    const { generateSalesInsight } = await getClaude();
     const result = await generateSalesInsight(car.salesData, `${car.brand} ${car.model}`);
     res.json({ success: true, data: result });
   } catch (err) {
